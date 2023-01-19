@@ -1,4 +1,4 @@
-package data001;
+package data001.recursion;
 
 public class IndirectRecursion {
 
