@@ -1,4 +1,4 @@
-package data001.recursion;
+package recursion;
 
 public class TaylorHornerRule {
     static double s;

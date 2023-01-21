@@ -1,4 +1,4 @@
-package data001.recursion;
+package recursion;
 
 public class TaylorSeriesRecursion {
     static double p = 1, f = 1;

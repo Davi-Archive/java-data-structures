@@ -1,4 +1,4 @@
-package data001.recursion;
+package recursion;
 
 public class Fibbonaci {
     static int t0 = 0, t1 = 1, s, i;
