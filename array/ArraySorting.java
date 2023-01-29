@@ -41,21 +41,31 @@ public class ArraySorting {
     }
 
     public static int[] sortArray() {
-        int[] array = {4, 5, 6, 8, 2, 3,45,34,12,56};
+        int[] array = {4, 5, 6, 8, 2, 3, 45, 34, 12, 56};
         boolean sorted = false;
         int temp;
         while (!sorted) {
-            sorted=true;
-            for (int i = 0; i < array.length-1; i++) {
+            sorted = true;
+            for (int i = 0; i < array.length - 1; i++) {
                 if (array[i] > array[i + 1]) {
                     temp = array[i];
                     array[i] = array[i + 1];
                     array[i + 1] = temp;
-                    sorted=false;
+                    sorted = false;
                 }
             }
         }
         return array;
+    }
+
+    public static boolean isTheArraySorted(int[] array) {
+        int[] array2 = {4, 5, 6, 8, 2, 3, 45, 34, 12, 56};
+        for (int i = 0; i < array.length-1; i++) {
+            if (array[i] > array[i + 1]) {
+                return false;
+            }
+        }
+        return true;
     }
 
     public static void main(String[] args) {
@@ -73,6 +83,9 @@ public class ArraySorting {
 
         System.out.printf("%n Order array=>");
         Arrays.stream(sortArray()).forEach(x -> System.out.printf(" " + x));
+
+        System.out.printf("%n ArraySorted?=>");
+        Arrays.stream(new Boolean[]{isTheArraySorted(new int[]{1,7, 2, 3, 4, 5, 6})}).forEach(x -> System.out.printf(" " + x));
 
     }
 }
