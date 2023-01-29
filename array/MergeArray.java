@@ -27,7 +27,28 @@ public class MergeArray {
         return c;
     }
 
+
+    private static int[] intersection() {
+        int arr1[] = {1, 2, 3, 4, 5, 6, 7};
+        int arr2[] = {2, 3, 5, 6, 7, 9, 10};
+        int arr3[] = new int[arr1.length + arr2.length];
+
+        int newArrIndex = 0;
+
+        for (int i = 0; i < arr1.length; i++) {
+            for (int j = 0; j < arr2.length; j++) {
+                if (arr1[i] == arr2[j]) {
+                    arr3[newArrIndex++]=arr1[i];
+                }
+            }
+        }
+        return arr3;
+    }
+
+
     public static void main(String[] args) {
         Arrays.stream(mergeArray()).forEach(x -> System.out.printf(" " + x));
+        System.out.println(" ");
+        Arrays.stream(intersection()).forEach(x -> System.out.printf(" " + x));
     }
 }
