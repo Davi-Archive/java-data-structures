@@ -13,11 +13,32 @@ public class SumOfArray {
             }
             H[arr[i]]++;
         }
+    }
+
+    public static void sumWhileLoop() {
+        System.out.println("SUM WHILE LOOP:");
+        int[] A = {1, 2, 4, 5, 6, 8, 9, 10, 12, 14};
+        int i = 0;
+        int j = A.length - 1;
+        int k = 10;
+
+        while (i < j) {
+            if (A[i] + A[j] == k) {
+                System.out.printf("%d + %d = %d %n", A[i], A[j], k);
+                i++;
+                j--;
+            } else if ((A[i] + A[j]) < k) {
+                i++;
+            } else {
+                j--;
+            }
+        }
 
     }
 
 
     public static void main(String[] args) {
         sumEqualsK();
+        sumWhileLoop();
     }
 }
