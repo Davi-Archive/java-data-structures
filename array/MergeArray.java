@@ -38,17 +38,33 @@ public class MergeArray {
         for (int i = 0; i < arr1.length; i++) {
             for (int j = 0; j < arr2.length; j++) {
                 if (arr1[i] == arr2[j]) {
-                    arr3[newArrIndex++]=arr1[i];
+                    arr3[newArrIndex++] = arr1[i];
                 }
             }
         }
         return arr3;
     }
 
+    public static int missingElement() {
+        int arr[] = {10,11, 12, 13, 14, 16, 17, 18, 19, 20, 21, 22};
+        boolean found = false;
+        int res = 0;
+
+        while (!found) {
+            for (int i = 0; i < arr.length - 1; i++) {
+                if (!(arr[i] - i == arr[0])) {
+                    found = true;
+                    return res = arr[i] - 1;
+                }
+            }
+        }
+        return res;
+    }
+
 
     public static void main(String[] args) {
         Arrays.stream(mergeArray()).forEach(x -> System.out.printf(" " + x));
         System.out.println(" ");
-        Arrays.stream(intersection()).forEach(x -> System.out.printf(" " + x));
+        System.out.println(missingElement());
     }
 }
