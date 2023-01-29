@@ -83,6 +83,24 @@ public class MergeArray {
         return res;
     }
 
+    public static List<Integer> hashingSearch() {
+        int arr[] = {1, 2, 3, 4, 7, 8, 9, 10, 11, 12, 13, 14, 16, 17, 19};
+        int res[] = new int[20];
+
+        List<Integer> response = new ArrayList<>();
+        res[0] = 1;
+        for (int i = 0; i < arr.length; i++) {
+            res[arr[i]] = 1;
+        }
+
+        for (int i = 0; i < res.length; i++) {
+            if (res[i] == 0) {
+                response.add(i);
+            }
+        }
+        return response;
+    }
+
 
     public static void main(String[] args) {
         Arrays.stream(mergeArray()).forEach(x -> System.out.printf(" " + x));
@@ -91,5 +109,9 @@ public class MergeArray {
 
         System.out.println(" ");
         manyMissingElement().forEach(x -> System.out.printf("Missing => %d %n", x));
+
+        System.out.println("  ");
+        hashingSearch().stream().forEach(x -> System.out.printf("Missing ==> %d %n", x));
+
     }
 }
