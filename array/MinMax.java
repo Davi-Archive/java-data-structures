@@ -1,5 +1,7 @@
 package array;
 
+import java.util.Arrays;
+
 public class MinMax {
 
     public static void findMinMax() {
@@ -18,7 +20,24 @@ public class MinMax {
         System.out.println("MAX => " + max);
     }
 
+
+    public static void reverse() {
+        int rotate =3;
+        int[] a = {1, 2, 3, 4, 5, 6, 7};
+        int temp = 0;
+        while (rotate > 0) {
+            temp = a[0];
+            for (int i = 0; i < a.length-1; i++) {
+                a[i] = a[i + 1];
+            }
+            a[a.length - 1] = temp;
+            rotate--;
+        }
+        Arrays.stream(a).forEach(x -> System.out.printf(" %d", x));
+    }
+
     public static void main(String[] args) {
         findMinMax();
+        reverse();
     }
 }
