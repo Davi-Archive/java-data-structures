@@ -1,6 +1,8 @@
 package array;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class MergeArray {
 
@@ -46,7 +48,7 @@ public class MergeArray {
     }
 
     public static int missingElement() {
-        int arr[] = {10,11, 12, 13, 14, 16, 17, 18, 19, 20, 21, 22};
+        int arr[] = {10, 11, 12, 13, 14, 16, 17, 18, 19, 20, 21, 22};
         boolean found = false;
         int res = 0;
 
@@ -61,10 +63,33 @@ public class MergeArray {
         return res;
     }
 
+    public static List<Integer> manyMissingElement() {
+        int arr[] = {10, 11, 12, 13, 14, 16, 17, 19, 20, 21, 22};
+        boolean found = false;
+        List<Integer> res = new ArrayList<>();
+        int diff = arr[0];
+        int k = 0;
+
+        for (int i = 0; i < arr.length - 1; i++) {
+            if (diff != arr[i] - i) {
+                while (diff < arr[i] - i) {
+                    System.out.println(i + diff);
+                    res.add(i + diff);
+                    diff++;
+                }
+            }
+        }
+
+        return res;
+    }
+
 
     public static void main(String[] args) {
         Arrays.stream(mergeArray()).forEach(x -> System.out.printf(" " + x));
         System.out.println(" ");
         System.out.println(missingElement());
+
+        System.out.println(" ");
+        manyMissingElement().forEach(x -> System.out.printf("Missing => %d %n", x));
     }
 }
